@@ -1,0 +1,9 @@
+genanki
+
+fastapi>=0.95.2
+uvicorn>=0.22.0
+python-multipart>=0.0.6
+anki>=2.1.65  # The actual Anki Python package
+prisma>=0.10.0  # For database access
+httpx>=0.24.1  # For async HTTP requests
+python-dotenv>=1.0.0  # For environment variables

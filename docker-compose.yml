@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  python-service:
+    build: ./python-microservice
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    volumes:
+      - ./python-microservice:/app
+      - ./anki:/app/anki
+
+  node-service:
+    build: ./node-api
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    depends_on:
+      - python-service
+      - db
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: yourpassword
+      POSTGRES_USER: youruser
+      POSTGRES_DB: yourdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
