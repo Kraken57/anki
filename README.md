@@ -120,7 +120,7 @@ uvicorn main:app --reload --port 8080
 
 ### 🎴 2. Generate Flashcards
 
-**GET** `https://anki-node-backend.onrender.com/api/flashcards/content/:id/generate`
+**POST** `https://anki-node-backend.onrender.com/api/flashcards/content/:id/generate`
 
 #### Response:
 
