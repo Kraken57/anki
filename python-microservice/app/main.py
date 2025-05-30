@@ -77,3 +77,7 @@ async def download_deck(deck_name: str, request: Request):
         filename=f"{deck_name}.apkg"
     )
     
+    
+@app.get("/healthz")
+def health_check():
+    return {"status": "ok"}
