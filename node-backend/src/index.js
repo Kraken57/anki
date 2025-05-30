@@ -7,6 +7,10 @@ const flashcardRoutes = require("./routes/flashcards");
 
 app.use(cors());
 app.use(express.json());
+app.get("/", (req, res) => {
+    res.json({ message: "Welcome to Anki Node Backend API" });
+  });
+
 app.use("/api/flashcards", flashcardRoutes);
 
 const PORT = process.env.PORT || 5000;
