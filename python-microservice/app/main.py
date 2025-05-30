@@ -17,6 +17,10 @@ class TopicData(BaseModel):
     subject: str
     title: str
     content: str
+    
+@app.get("/")
+async def root():
+    return {"message": "Hello from FastAPI on Render!"}
 
 @app.post("/create_card")
 async def create_card(data: TopicData):
