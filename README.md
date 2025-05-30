@@ -173,8 +173,8 @@ Same structure as above.
 
 1. `POST` to `https://anki-node-backend.onrender.com/api/flashcards/content`
 2. Copy `topic.id` from response
-3. `GET` to `https://anki-node-backend.onrender.com/api/flashcards/content/<topicId>/generate`
-4. Visit `download_link` to fetch `.apkg`
+3. `POST` to `https://anki-node-backend.onrender.com/api/flashcards/content/<topicId>/generate`
+4. Visit `download_link` to fetch `.apkg` -->  Will only work at localhost
 
 ---
 
