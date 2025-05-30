@@ -19,8 +19,14 @@ class TopicData(BaseModel):
     content: str
     
 @app.get("/")
+@app.head("/")
 async def root():
     return {"message": "Hello from FastAPI on Render!"}
+
+@app.get("/healthz")
+@app.head("/healthz")
+async def health_check():
+    return {"status": "ok"}
 
 @app.post("/create_card")
 async def create_card(data: TopicData):
@@ -50,14 +56,6 @@ async def create_card(data: TopicData):
     logger.info(f"Successfully created deck: {result['deck_id']}")
     return response
 
-# @app.get("/cards/{deck_name}")
-# async def get_flashcards(deck_name: str):
-#     result = extract_flashcards_from_apkg(deck_name)
-
-#     if result["status"] != "success":
-#         raise HTTPException(status_code=404, detail=result["error"])
-
-#     return result
 
 @app.get("/download/{deck_name}")
 async def download_deck(deck_name: str, request: Request):
@@ -80,8 +78,3 @@ async def download_deck(deck_name: str, request: Request):
         media_type="application/octet-stream",
         filename=f"{deck_name}.apkg"
     )
-    
-    
-@app.get("/healthz")
-def health_check():
-    return {"status": "ok"}
