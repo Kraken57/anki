@@ -4,7 +4,11 @@ WORKDIR /app
 
 COPY package*.json ./
 
+# Install dependencies
 RUN npm install --production
+
+# Generate Prisma client
+RUN npx prisma generate
 
 COPY . .
 
