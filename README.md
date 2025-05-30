@@ -53,7 +53,7 @@ cd node-backend
 ### 2. Install Node & Python Dependencies
 
 ```bash
-pnpm install          # For Node.js (Express + Prisma)
+npm install         # For Node.js (Express + Prisma)
 
 # This in cd python-microservice
 pip install -r requirements.txt  # For FastAPI microservice
@@ -78,7 +78,7 @@ PYTHON_SERVICE_URL=https://anki-python-microservice.onrender.com
 
 ```bash
 # Terminal 1
-pnpm dev
+node src/index.js
 
 # Terminal 2 (in /python-service)
 uvicorn main:app --reload --port 8080
@@ -223,6 +223,3 @@ project-root/
 
 ---
 
-## 📬 Contact
-
-Created with ❤️ by Kraken7 — Reach out via [GitHub](https://github.com/Kraken7) or [Email](mailto:kraken@example.com)
