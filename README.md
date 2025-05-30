@@ -46,14 +46,16 @@ This is a **full-stack backend system** for automatically generating Anki-compat
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/anki-flashcard-backend.git
-cd anki-flashcard-backend
+git clone git@github.com:Kraken57/anki.git
+cd node-backend
 ```
 
 ### 2. Install Node & Python Dependencies
 
 ```bash
 pnpm install          # For Node.js (Express + Prisma)
+
+# This in cd python-microservice
 pip install -r requirements.txt  # For FastAPI microservice
 ```
 
